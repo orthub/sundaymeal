@@ -1,0 +1,2 @@
+<?php
+echo 'Sonntags Mahlzeiten';
