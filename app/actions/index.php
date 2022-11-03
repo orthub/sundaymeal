@@ -6,6 +6,9 @@ $connection = get_db();
 // used to highlight the current week
 $current_week = date('W');
 
+// TODO add the last or next year if the result is less than five weeks before or after the current week
+$week = $current_week - 6;
+
 // filter url param 
 if (isset($_GET['year'])) {
   $get_year = htmlspecialchars(filter_input(INPUT_GET, 'year', FILTER_SANITIZE_SPECIAL_CHARS));
@@ -19,7 +22,8 @@ if (!isset($get_year)){
   $year = 'sundays_' . $get_year;
 }
 
-$meals = get_meals_from_year($year);
+// for startpage get the last and next five weeks from the current week
+$meals = get_index_meals($year, (string)$week);
 
 if (!$meals) {
   $_SESSION['error']['year_dont_exist'] = 'Für dieses Jahr existiert kein Eintrag.';
