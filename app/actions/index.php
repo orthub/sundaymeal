@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../functions/data.php';
+require_once __DIR__ . '/../functions/meals.php';
 
 $connection = get_db();
 

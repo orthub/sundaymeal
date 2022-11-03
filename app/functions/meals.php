@@ -17,3 +17,13 @@ function get_meals_from_year(string $year)
 
   return $res->fetchAll(PDO::FETCH_ASSOC);
 }
+
+function get_index_meals()
+{
+  
+}
+
+function new_meal()
+{
+  
+}
