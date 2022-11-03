@@ -1,2 +1,3 @@
 .ddev
 app/config/config.php
+app/database_scripts/mahlzeit.sql
