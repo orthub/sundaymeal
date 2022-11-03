@@ -20,3 +20,8 @@ if (!isset($get_year)){
 }
 
 $meals = get_meals_from_year($year);
+
+if (!$meals) {
+  $_SESSION['error']['year_dont_exist'] = 'Für dieses Jahr existiert kein Eintrag.';
+  header('Location: ' . '/public/views/error.php');
+}
