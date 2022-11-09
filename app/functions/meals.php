@@ -4,7 +4,7 @@ require_once __DIR__ . '/database.php';
 
 function get_meals_from_year(string $year)
 { 
-  $sql = 'SELECT m.id AS essen_id, m.meal AS mahlzeit, m.grilling AS grillen, m.note AS notiz, m.image_path AS bild,
+  $sql = 'SELECT m.id AS essen_id, m.meal AS mahlzeit, m.note AS notiz, m.image_path AS bild,
                  s.id AS day_id, s.kw AS kw, s.sunday_date AS sonntag, s.meal_id
           FROM ' . $year . ' s
           JOIN meals m ON s.meal_id = m.id
@@ -20,7 +20,7 @@ function get_meals_from_year(string $year)
 
 function get_index_meals(string $year, string $week)
 {
-  $sql = 'SELECT m.id AS essen_id, m.meal AS mahlzeit, m.grilling AS grillen, m.note AS notiz, m.image_path AS bild,
+  $sql = 'SELECT m.id AS essen_id, m.meal AS mahlzeit, m.note AS notiz, m.image_path AS bild,
   s.id AS day_id, s.kw AS kw, s.sunday_date AS sonntag, s.meal_id
   FROM ' . $year . ' s
   JOIN meals m ON s.meal_id = m.id

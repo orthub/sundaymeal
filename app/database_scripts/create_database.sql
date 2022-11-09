@@ -12,7 +12,6 @@
 CREATE TABLE meals (
   id SERIAL PRIMARY KEY NOT NULL,
   meal VARCHAR(255) NOT NULL,
-  grilling BOOLEAN NOT NULL DEFAULT FALSE,
   note TEXT,
   image_path VARCHAR(255)
 );
@@ -37,7 +36,7 @@ CREATE TABLE sundays_2023 (
 );
 
 -- DEFAULT MEAL AS PLACEHOLDER --
-INSERT INTO meals ("meal", "grilling", "note", "image_path") VALUES ('Nichts geplant', FALSE, 'Kein geplantes Essen für diesen Tag.', '/public/images/default.jpg');
+INSERT INTO meals ("meal", "note", "image_path") VALUES ('Nichts geplant', 'Kein geplantes Essen für diesen Tag.', '/public/images/default.jpg');
 
 -- SUNDAYS 2021 --
 INSERT INTO sundays_2021 ("kw", "sunday_date", "meal_id") VALUES ('1', '2021-01-10', '1');
