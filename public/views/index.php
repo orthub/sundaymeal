@@ -4,7 +4,7 @@ require_once __DIR__ . '/../../app/helpers/flash_message.php';
 require_once __DIR__ . '/../../app/actions/index.php';
 
 require_once __DIR__ . '/../parts/head.php';
-
+require_once __DIR__ . '/../parts/menu.php';
 ?>
 <div class="container">
   <div class="col-6 col-t-6 offset-3">

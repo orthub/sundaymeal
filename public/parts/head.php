@@ -8,6 +8,9 @@
   <link href="/public/assets/css/bootstrap.min.css" rel="stylesheet">
   <link href="/public/assets/css/fork-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/public/assets/css/style.css">
+  <script src="/public/assets/js/popper.min.js"></script>
   <script src="/public/assets/js/bootstrap.min.js"></script>
 
 </head>
+
+<body>
