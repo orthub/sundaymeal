@@ -20,7 +20,7 @@
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><i class="fa fa-calendar"></i>&nbspJahresauswahl</a>
           <ul class="dropdown-menu">
             <?php foreach($database_years as $year) : ?>
-            <li><a class="dropdown-item text-center" href="/public/views/index.php?year=<?php echo str_replace('sundays_', '', $year['table_name']) ?>"><?php echo str_replace('sundays_', '', $year['table_name']) ?></a></li>
+            <li><a class="dropdown-item text-center" href="/public/views/full_year.php?year=<?php echo str_replace('sundays_', '', $year['table_name']) ?>"><?php echo str_replace('sundays_', '', $year['table_name']) ?></a></li>
             <?php endforeach ?>
           </ul>
         </li>
