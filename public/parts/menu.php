@@ -11,7 +11,7 @@
           <a class="nav-link" href="/public/views/new_meal.php"><i class="fa fa-plus-square"></i>&nbspNeue&nbspMahlzeit</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa fa-fork-awesome"></i>&nbspAlle&nbspMahlzeiten</a>
+          <a class="nav-link" href="/public/views/all_meals.php"><i class="fa fa-fork-awesome"></i>&nbspAlle&nbspMahlzeiten</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#"><i class="fa fa-bar-chart"></i>&nbspStatistik</a>

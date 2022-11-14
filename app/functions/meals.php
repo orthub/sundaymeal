@@ -53,3 +53,17 @@ function add_new_meal(string $name, string $note, string $image): bool
 
   return true;
 }
+
+function get_all_meals()
+{
+  $sql = "SELECT m.id, m.meal, m.note, m.image_path
+          FROM meals m
+          ORDER BY m.meal ASC";
+  $res = get_db()->query($sql);
+  
+  if (!$res) {
+    return false;
+  }
+  
+  return $res->fetchAll(PDO::FETCH_ASSOC);
+}
