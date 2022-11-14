@@ -8,13 +8,16 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa fa-plus-square"></i> Neues Essen</a>
+          <a class="nav-link" href="/public/views/new_meal.php"><i class="fa fa-plus-square"></i>&nbspNeue&nbspMahlzeit</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa fa-bar-chart"></i> Statistik</a>
+          <a class="nav-link" href="#"><i class="fa fa-fork-awesome"></i>&nbspAlle&nbspMahlzeiten</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fa fa-bar-chart"></i>&nbspStatistik</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Jahresauswahl</a>
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><i class="fa fa-calendar"></i>&nbspJahresauswahl</a>
           <ul class="dropdown-menu">
             <?php foreach($database_years as $year) : ?>
             <li><a class="dropdown-item text-center" href="/public/views/index.php?year=<?php echo str_replace('sundays_', '', $year['table_name']) ?>"><?php echo str_replace('sundays_', '', $year['table_name']) ?></a></li>

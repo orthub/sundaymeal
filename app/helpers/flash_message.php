@@ -2,13 +2,13 @@
 // loop through messages
 if (isset($_SESSION['error'])) {
   foreach ($_SESSION['error'] as $error) {
-    echo '<p class="flash-error">' . $error . '</p><br />';
+    echo '<p class="alert alert-danger">' . $error . '</p><br />';
   }
 }
 
 if (isset($_SESSION['success'])) {
   foreach ($_SESSION['success'] as $success) {
-    echo '<p class="flash-success">' . $success . '</p><br />';
+    echo '<p class="alert alert-success">' . $success . '</p><br />';
   }
 }
 

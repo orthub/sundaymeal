@@ -35,7 +35,21 @@ function get_index_meals(string $year, string $week)
   return $res->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function new_meal()
+function add_new_meal(string $name, string $note, string $image): bool
 {
+  $sql = "INSERT INTO meals (meal, note, image_path)
+          VALUES (:meal_name, :meal_note, :meal_image);";
+
+  $stmt = get_db()->prepare($sql);
   
+  $stmt->execute([':meal_name' => $name,
+                  ':meal_note' => $note,
+                  ':meal_image' => $image
+                ]);
+
+  if (!$stmt) {
+    return false;
+  }
+
+  return true;
 }
