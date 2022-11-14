@@ -20,24 +20,13 @@ table {
 }
 
 th, td {
-  /* font-size: 1.125rem; */
-  margin: 0rem;
-  padding: 0rem;
+  font-size: 1.125rem;
   border-bottom: 0.063rem solid #000000;
 }
 
 tr:nth-child(even) {
   background-color: #C8E9E8;
 }
-
-.text-center {
-  text-align: center;
-}
-
-.text-right {
-  text-align: right;
-}
-
 
 .space {
   margin-left: auto;

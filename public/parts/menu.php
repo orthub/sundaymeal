@@ -1,6 +1,6 @@
 <?php require_once __DIR__ . '/../../app/actions/menu.php' ?>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <div class="container-fluid">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <div class="container">
     <a class="navbar-brand" href="/"><i class="fa fa-home"></i></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>

@@ -1,13 +1,16 @@
 <?php
 require_once __DIR__ . '/../functions/meals.php';
 
-$connection = get_db();
-
 // used to highlight the current week
 $current_week = date('W');
 
 // TODO add the last or next year if the result is less than five weeks before or after the current week
 $week = $current_week - 6;
+
+// help variable for highlight the actual year
+if (isset($_GET['current-year'])) {
+  $active_year = htmlspecialchars(filter_input(INPUT_GET, 'current-year', FILTER_SANITIZE_SPECIAL_CHARS));
+}
 
 // filter url param 
 if (isset($_GET['year'])) {
