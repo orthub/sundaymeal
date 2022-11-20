@@ -42,7 +42,7 @@ require_once __DIR__ . '/../parts/menu.php';
 
       </div>
       <div class="card-footer">
-        <a class="btn btn-danger" href="/public/views/index.php?current-year=true">Abbrechen</a>
+        <a class="btn btn-danger" href="/public/views/index.php?year=<?php echo $current_year ?>&current-year=true">Abbrechen</a>
         <div class="float-right">
           <button type="submit" class="btn btn-success">Speichern</button>
         </div>

@@ -2,6 +2,8 @@
 require_once __DIR__ . '/../helpers/session.php';
 require_once __DIR__ . '/../functions/meals.php';
 
+$current_year = date('Y');
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   $errors = false;
@@ -66,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $new_meal = add_new_meal($meal_name, $meal_note, $meal_image);
     if ($new_meal) {
       $_SESSION['success']['new_meal'] = 'Neue Mahlzeit wurde hinzugefügt';
-      header('Location: ' . '/public/views/index.php?current-year=true');
+      header('Location: ' . '/public/views/index.php?year=' . $current_year .'&current-year=true');
       exit();
     }
   } else {

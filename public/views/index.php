@@ -25,10 +25,7 @@ require_once __DIR__ . '/../parts/menu.php';
       <td><?php echo '<img alt="Vorschaubild von ' . $meal['mahlzeit'] . '" src="' . $meal['bild'] . '" style="max-height:100px"></img>' ?></td>
       <td><?php echo $meal['mahlzeit']; ?></td>
       <td>
-        <form action="./edit.php" method="POST">
-          <input type="hidden" value="<?php echo $meal['meal_id']; ?>" name="id"></input>
-          <input type="submit" value="Bearbeiten"></input>
-        </form>
+        <a class="btn btn-secondary" href="/public/views/edit_sunday.php?day-id=<?php echo $meal['day_id']?>&year=<?php echo $get_year ?>">Bearbeiten</a>
       </td>
     </tr>
 

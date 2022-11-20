@@ -18,6 +18,24 @@ function get_meals_from_year(string $year)
   return $res->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function get_meal_for_sunday(string $day_id, string $table)
+{
+  $sql = "SELECT m.id AS essen_id, m.meal AS mahlzeit, m.note AS notiz, m.image_path AS bild,
+          s.id AS day_id, s.kw AS kw, s.sunday_date AS sonntag, s.meal_id
+          FROM $table s
+          JOIN meals m ON s.meal_id = m.id
+          WHERE s.id = $day_id
+          LIMIT 1";
+  
+  $stmt = get_db()->query($sql);
+
+  if (!$stmt) {
+    return false;
+  }
+        
+  return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
 function get_index_meals(string $year, string $week)
 {
   $sql = 'SELECT m.id AS essen_id, m.meal AS mahlzeit, m.note AS notiz, m.image_path AS bild,
@@ -66,4 +84,19 @@ function get_all_meals()
   }
   
   return $res->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function update_sunday_meal(string $table, string $day_id, string $new_meal): bool
+{
+  $sql = "UPDATE $table
+          SET meal_id = $new_meal
+          WHERE id = $day_id";
+
+  $stmt = get_db()->query($sql);
+
+  if (!$stmt) {
+    return false;
+  }
+
+  return true;
 }
