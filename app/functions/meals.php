@@ -86,12 +86,43 @@ function get_all_meals()
   return $res->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function get_single_meal(string $meal_id)
+{
+  $sql = "SELECT m.id, m.meal, m.note, m.image_path
+          FROM meals m
+          WHERE m.id = $meal_id";
+
+  $stmt = get_db()->query($sql);
+
+  if (!$stmt) {
+    return false;
+  }
+
+  return $stmt->fetch(PDO::FETCH_ASSOC);
+
+}
+
 function update_sunday_meal(string $table, string $day_id, string $new_meal): bool
 {
   $sql = "UPDATE $table
           SET meal_id = $new_meal
           WHERE id = $day_id";
 
+  $stmt = get_db()->query($sql);
+
+  if (!$stmt) {
+    return false;
+  }
+
+  return true;
+}
+
+function update_meal(string $meal_id, string $meal_name, string $meal_note, string $meal_image): bool
+{
+  $sql = "UPDATE meals
+          SET meal = '$meal_name', note = '$meal_note', image_path = '$meal_image'
+          WHERE id = $meal_id";
+          
   $stmt = get_db()->query($sql);
 
   if (!$stmt) {
