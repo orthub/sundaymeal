@@ -131,3 +131,20 @@ function update_meal(string $meal_id, string $meal_name, string $meal_note, stri
 
   return true;
 }
+
+function statistic(string $year, string $column, string $sort)
+{
+  $sql = "SELECT s.meal_id, m.meal AS mahlzeit, COUNT( meal_id)
+          FROM $year s
+          JOIN meals m ON s.meal_id = m.id
+          GROUP BY s.meal_id, m.meal 
+          ORDER BY $column $sort";
+  
+$stmt = get_db()->query($sql);
+
+if (!$stmt) {
+return false;
+}
+
+return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}

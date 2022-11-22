@@ -14,7 +14,7 @@
           <a class="nav-link" href="/public/views/all_meals.php"><i class="fa fa-fork-awesome"></i>&nbspAlle&nbspMahlzeiten</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fa fa-bar-chart"></i>&nbspStatistik</a>
+          <a class="nav-link" href="/public/views/statistics.php?year=<?php echo $current_year ?>"><i class="fa fa-bar-chart"></i>&nbspStatistik</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><i class="fa fa-calendar"></i>&nbspJahresauswahl</a>
