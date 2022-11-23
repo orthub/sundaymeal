@@ -3,6 +3,7 @@ body, html {
   /* background-size: cover; */
   margin: 0rem;
   padding: 0rem;
+  overflow-x: hidden;
 }
 hr {
   margin: 2.5rem auto 2.5rem auto;
