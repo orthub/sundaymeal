@@ -14,22 +14,21 @@ require_once __DIR__ . '/../parts/menu.php';
     <th>Datum</th>
     <th>Vorschau</th>
     <th>Mahlzeit</th>
-    <th></th>
 
     <?php foreach ($meals as $meal) : ?>
 
     <tr>
-      <td><?php echo $meal['kw']; ?></td>
-      <!-- change date output to dd.mm.yyyy -->
-      <td><?php echo preg_replace('#^(\d{4})-(\d{2})-(\d{2})$#', '\3.\2.\1', $meal['sonntag']); ?></td>
-      <td><?php echo '<img alt="Vorschaubild von ' . $meal['mahlzeit'] . '" src="' . $meal['bild'] . '" style="max-height:100px"></img>' ?></td>
-      <td><?php echo $meal['mahlzeit']; ?></td>
       <td>
-        <form action="./edit_sunday.php" method="POST">
-          <input type="hidden" value="<?php echo $meal['meal_id']; ?>" name="meal-id"></input>
-          <input type="hidden" value="<?php echo $meal['day_id']; ?>" name="day-id"></input>
-          <input type="submit" value="Bearbeiten"></input>
-        </form>
+        <p class="p-table"><?php echo $meal['kw']; ?></p>
+      </td>
+      <!-- change date output to dd.mm.yyyy -->
+      <td>
+        <p class="p-table"><?php echo preg_replace('#^(\d{4})-(\d{2})-(\d{2})$#', '\3.\2.\1', $meal['sonntag']); ?></p>
+      </td>
+      <td><a href="/public/views/edit_meal.php?meal-id=<?php echo $meal['essen_id'] ?>"><?php echo '<img class="img-fluid" alt="Vorschaubild von ' . $meal['mahlzeit'] . '" src="' . $meal['bild'] . '" style="max-height:100px"></img>' ?></a></td>
+      <td>
+        <p class="p-table"><?php echo $meal['mahlzeit']; ?></p>
+        <p class="edit-icon"><a href="/public/views/edit_sunday.php?day-id=<?php echo $meal['day_id']?>&year=<?php echo $get_year ?>"><i class="fa fa-pencil-square-o"></i></a></p>
       </td>
     </tr>
 

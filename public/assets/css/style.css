@@ -14,6 +14,22 @@ hr {
   background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
 
+.navbar-custom {
+  background-color: #29292b;
+}
+
+.navbar-custom, .navbar-brand {
+  color: #f1f1d9 ;
+}
+
+nav .navbar-nav li a {
+  color: #f1f1d9 !important;
+}
+
+nav .navbar-nav li a:hover {
+  color: #857aff !important;
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
@@ -21,8 +37,10 @@ table {
 }
 
 th, td {
-  font-size: 1.125rem;
+  font-size: 1rem;
   border-bottom: 0.063rem solid #000000;
+  margin: 0rem ;
+  padding: 0.25rem !important;
 }
 
 tr:nth-child(even) {
@@ -49,10 +67,26 @@ input[type=text] {
   font-size: 1.5rem;
 }
 
+.p-table {
+  margin-top: 1.125rem;
+}
+
+.edit-icon {
+  margin-top: 1.125rem;
+  font-size: 1.5rem;
+}
+
+a, .edit-icon {
+  color: #857aff;
+}
+
+th, .th-statistic {
+  font-size: 1.25rem;
+}
+
 /* DROPDOWN */
 /* Style The Dropdown Button */
 .dropdownbutton {
-  background-color: #4CAF50;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -70,10 +104,18 @@ input[type=text] {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #29292b;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+}
+
+.dropdown-item {
+  background-color: #29292b;
+}
+
+.dropdown-menu {
+  background-color: #29292b;
 }
 
 /* Links inside the dropdown */
@@ -85,7 +127,9 @@ input[type=text] {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-menu a:hover {
+  background-color: #525257;
+}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
