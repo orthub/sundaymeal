@@ -1,5 +1,14 @@
 .ddev
 app/config/config.php
 app/database_scripts/mahlzeit.sql
+app/lib/doc/
+app/lib/font/
+app/lib/makefont/
+app/lib/tutorial/
+app/lib/changelog.htm
+app/lib/FAQ.htm
+app/lib/fpdf.php
+app/lib/fpdf.css
+app/lib/install.txt
+app/lib/license.txt
 sync.sh
-info.php

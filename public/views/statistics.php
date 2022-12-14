@@ -28,11 +28,12 @@ require_once __DIR__ . '/../parts/menu.php';
 
   <h4 class="text-center">Jahr:&nbsp<?php echo $get_year ?></h4>
   <table class="table" style="text-align: center">
-    <th class="th-statistic">Mahlzeit&nbsp&nbsp&nbsp<a href="/public/views/statistics.php?year=<?php echo $get_year ?>&column=meal&sort=asc"><i class="fa fa-sort-alpha-asc"></i></a>&nbsp&nbsp<a href="/public/views/statistics.php?year=<?php echo $get_year ?>&column=meal&sort=desc"><i class="fa fa-sort-alpha-desc"></i></a></th>
-    <th class="th-statistic">H&aumlufigkeit&nbsp&nbsp&nbsp<a href="/public/views/statistics.php?year=<?php echo $get_year ?>&column=count&sort=asc"><i class="fa fa-sort-amount-asc"></i></a>&nbsp&nbsp<a href="/public/views/statistics.php?year=<?php echo $get_year ?>&column=count&sort=desc"><i class="fa fa-sort-amount-desc"></i></a></th>
+    <th class="th-statistic">Mahlzeit&nbsp&nbsp&nbsp<a href="/public/views/statistics.php?year=<?php echo $get_year ?>&column=meal&sort=asc"><span class="fa fa-sort-alpha-asc"></span></a>&nbsp&nbsp<a href="/public/views/statistics.php?year=<?php echo $get_year ?>&column=meal&sort=desc"><span class="fa fa-sort-alpha-desc"></span></a></th>
+    <th class="th-statistic">H&aumlufigkeit&nbsp&nbsp&nbsp<a href="/public/views/statistics.php?year=<?php echo $get_year ?>&column=count&sort=asc"><span class="fa fa-sort-amount-asc"></span></a>&nbsp&nbsp<a href="/public/views/statistics.php?year=<?php echo $get_year ?>&column=count&sort=desc"><span class="fa fa-sort-amount-desc"></span></a></th>
 
     <?php foreach ($statistics as $statistic) : ?>
 
+    <!-- highlight not planed meals with a red background -->
     <tr style="<?php echo ($statistic['meal_id'] == '1') ? 'background-color: #dc1d1d; font-weight: bold;' : ''; ?>">
       <td><?php echo $statistic['mahlzeit']; ?></td>
       <td><?php echo $statistic['count']; ?></td>

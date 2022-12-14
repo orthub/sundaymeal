@@ -5,6 +5,11 @@ body, html {
   padding: 0rem;
   overflow-x: hidden;
 }
+
+a {
+  text-decoration: none;
+}
+
 hr {
   margin: 2.5rem auto 2.5rem auto;
   width: 80%;

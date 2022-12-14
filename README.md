@@ -15,3 +15,7 @@ CREATE DATABASE essen;
 CREATE USER db WITH PASSWORD 'STRong14d@taba53';
 
 GRANT ALL PRIVILEGES ON DATABASE essen TO db;
+
+# Software
+- fpdf
+Download and install fpdf in the lib folder
