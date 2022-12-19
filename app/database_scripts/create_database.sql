@@ -1,7 +1,7 @@
 -- UNCOMMENT STATEMENTS BELOW IF YOU NEED A FRESH INSTALL --
--- DROP TABLE IF EXISTS sundays_2021;
--- DROP TABLE IF EXISTS sundays_2022;
--- DROP TABLE IF EXISTS sundays_2023;
+DROP TABLE IF EXISTS sundays_2021;
+DROP TABLE IF EXISTS sundays_2022;
+DROP TABLE IF EXISTS sundays_2023;
 
 -- IF YOU ADDED MORE SCRIPTS, UNCOMMENT THEM BELOW --
 -- DROP TABLE IF EXISTS sundays_2024
@@ -28,20 +28,21 @@ CREATE TABLE sundays_2022 (
   kw INT NOT NULL,
   sunday_note TEXT,
   sunday_date DATE NOT NULL,
-  meal_id INTEGER REFERENCES meals (id)
+  meal_id INTEGER REFERENCES meals (id) DEFAULT 1
 );
 CREATE TABLE sundays_2023 (
   id SERIAL PRIMARY KEY NOT NULL,
   kw INT NOT NULL,
   sunday_note TEXT,
   sunday_date DATE NOT NULL,
-  meal_id INTEGER REFERENCES meals (id)
+  meal_id INTEGER REFERENCES meals (id) DEFAULT 1
 );
 
 -- DEFAULT MEAL AS PLACEHOLDER --
-INSERT INTO meals ("meal", "note", "image_path") VALUES ('Nichts geplant', 'Kein geplantes Essen für diesen Tag.', '/public/images/default.jpg');
+INSERT INTO meals ("meal", "note", "image_path") VALUES ('Nichts geplant', '', '/public/images/default.jpg');
 
 -- SUNDAYS 2021 --
+INSERT INTO sundays_2021 ("kw", "sunday_note", "sunday_date", "meal_id") VALUES ('52', '', '2021-01-03', '1');
 INSERT INTO sundays_2021 ("kw", "sunday_note", "sunday_date", "meal_id") VALUES ('1', '', '2021-01-10', '1');
 INSERT INTO sundays_2021 ("kw", "sunday_note", "sunday_date", "meal_id") VALUES ('2', '', '2021-01-17', '1');
 INSERT INTO sundays_2021 ("kw", "sunday_note", "sunday_date", "meal_id") VALUES ('3', '', '2021-01-24', '1');
@@ -96,6 +97,7 @@ INSERT INTO sundays_2021 ("kw", "sunday_note", "sunday_date", "meal_id") VALUES 
 INSERT INTO sundays_2021 ("kw", "sunday_note", "sunday_date", "meal_id") VALUES ('52', '', '2022-01-02', '1');
 
 -- 2022 --
+INSERT INTO sundays_2022 ("kw", "sunday_note", "sunday_date", "meal_id") VALUES ('52', '', '2022-01-02', '1');
 INSERT INTO sundays_2022 ("kw", "sunday_note", "sunday_date", "meal_id") VALUES ('1', '', '2022-01-09', '1');
 INSERT INTO sundays_2022 ("kw", "sunday_note", "sunday_date", "meal_id") VALUES ('2', '', '2022-01-16', '1');
 INSERT INTO sundays_2022 ("kw", "sunday_note", "sunday_date", "meal_id") VALUES ('3', '', '2022-01-23', '1');
@@ -150,6 +152,7 @@ INSERT INTO sundays_2022 ("kw", "sunday_note", "sunday_date", "meal_id") VALUES 
 INSERT INTO sundays_2022 ("kw", "sunday_note", "sunday_date", "meal_id") VALUES ('52', '', '2023-01-01', '1');
 
 -- 2023 --
+INSERT INTO sundays_2023 ("kw", "sunday_note", "sunday_date", "meal_id") VALUES ('52', '', '2023-01-01', '1');
 INSERT INTO sundays_2023 ("kw", "sunday_note", "sunday_date", "meal_id") VALUES ('1', '', '2023-01-08', '1');
 INSERT INTO sundays_2023 ("kw", "sunday_note", "sunday_date", "meal_id") VALUES ('2', '', '2023-01-15', '1');
 INSERT INTO sundays_2023 ("kw", "sunday_note", "sunday_date", "meal_id") VALUES ('3', '', '2023-01-22', '1');

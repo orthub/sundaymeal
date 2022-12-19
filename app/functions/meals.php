@@ -4,11 +4,11 @@ require_once __DIR__ . '/database.php';
 
 function get_meals_from_year(string $year)
 { 
-  $sql = 'SELECT m.id AS essen_id, m.meal AS mahlzeit, m.note AS notiz, m.image_path AS bild,
+  $sql = 'SELECT m.id AS essen_id, m.meal AS mahlzeit, sunday_note AS notiz, m.image_path AS bild,
                  s.id AS day_id, s.kw AS kw, s.sunday_date AS sonntag, s.meal_id
           FROM ' . $year . ' s
           JOIN meals m ON s.meal_id = m.id
-          ORDER BY kw ASC';
+          ORDER BY sonntag ASC';
   $res = get_db()->query($sql);
 
   if (!$res) {
@@ -20,7 +20,7 @@ function get_meals_from_year(string $year)
 
 function get_meal_for_sunday(string $day_id, string $table)
 {
-  $sql = "SELECT m.id AS essen_id, m.meal AS mahlzeit, m.note AS notiz, m.image_path AS bild,
+  $sql = "SELECT m.id AS essen_id, m.meal AS mahlzeit, sunday_note AS notiz, m.image_path AS bild,
           s.id AS day_id, s.kw AS kw, s.sunday_date AS sonntag, s.meal_id
           FROM $table s
           JOIN meals m ON s.meal_id = m.id
@@ -42,7 +42,7 @@ function get_index_meals(string $year, string $week)
   s.id AS day_id, s.kw AS kw, s.sunday_date AS sonntag, s.meal_id
   FROM ' . $year . ' s
   JOIN meals m ON s.meal_id = m.id
-  ORDER BY kw ASC
+  ORDER BY sonntag ASC
   OFFSET ' . $week . ' LIMIT 11';
   $res = get_db()->query($sql);
 
