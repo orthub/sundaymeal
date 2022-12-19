@@ -38,7 +38,7 @@ function get_meal_for_sunday(string $day_id, string $table)
 
 function get_index_meals(string $year, string $week)
 {
-  $sql = 'SELECT m.id AS essen_id, m.meal AS mahlzeit, m.note AS notiz, m.image_path AS bild,
+  $sql = 'SELECT m.id AS essen_id, m.meal AS mahlzeit, s.sunday_note AS notiz, m.image_path AS bild,
   s.id AS day_id, s.kw AS kw, s.sunday_date AS sonntag, s.meal_id
   FROM ' . $year . ' s
   JOIN meals m ON s.meal_id = m.id
@@ -102,10 +102,10 @@ function get_single_meal(string $meal_id)
 
 }
 
-function update_sunday_meal(string $table, string $day_id, string $new_meal): bool
+function update_sunday_meal(string $table, string $day_id, string $new_meal, string $note): bool
 {
   $sql = "UPDATE $table
-          SET meal_id = $new_meal
+          SET meal_id = $new_meal, sunday_note = '$note'
           WHERE id = $day_id";
 
   $stmt = get_db()->query($sql);
