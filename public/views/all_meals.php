@@ -15,7 +15,9 @@ require_once __DIR__ . '/../parts/menu.php';
 
   <div class="row">
     <div class="col-md-4">
-      <td><img style="width:100%" src="<?php echo $meal['image_path'] ?>" alt="Vorschaubild von <?php echo $meal['meal'] ?>"></img></td>
+      <div class="img-width">
+        <td><img style="width:100%" src="<?php echo $meal['image_path'] ?>" alt="Vorschaubild von <?php echo $meal['meal'] ?>"></img></td>
+      </div>
     </div>
     <div class="col-md-3">
       <br />
