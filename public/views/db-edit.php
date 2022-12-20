@@ -26,10 +26,10 @@ require_once __DIR__ . '/../parts/menu.php';
       <table class="table">
         <th>Bearbeiten</th>
         <tr>
-          <td><a href="/public/views/new_meal.php"><span class="fa fa-plus-square"></span>&nbspNeue&nbspMahlzeit&nbsphinzuf&uumlgen</a></td>
+          <td><a href="/public/views/new-meal.php"><span class="fa fa-plus-square"></span>&nbspNeue&nbspMahlzeit&nbsphinzuf&uumlgen</a></td>
         </tr>
         <tr>
-          <td><a href="/public/views/add_year.php"><span class="fa fa-calendar-plus-o"></span>&nbspNeues&nbspJahr&nbsphinzuf&uumlgen</a></td>
+          <td><a href="/public/views/add-year.php"><span class="fa fa-calendar-plus-o"></span>&nbspNeues&nbspJahr&nbsphinzuf&uumlgen</a></td>
         </tr>
         <tr>
           <td><b>Jahre&nbspin&nbspder&nbspDatenbank:</b><br />

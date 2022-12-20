@@ -18,7 +18,7 @@ require_once __DIR__ . '/../parts/menu.php';
           <div class="space"></div>
       </div>
       <div class="card-footer">
-        <a class="btn btn-success" href="/public/views/db_edit.php">Abbrechen</a>
+        <a class="btn btn-success" href="/public/views/db-edit.php">Abbrechen</a>
         <div class="float-right">
           <button type="submit" class="btn btn-danger">L&oumlschen</button>
         </div>

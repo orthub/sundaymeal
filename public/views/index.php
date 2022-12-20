@@ -26,11 +26,11 @@ require_once __DIR__ . '/../parts/menu.php';
       <td>
         <p class="p-table"><?php echo preg_replace('#^(\d{4})-(\d{2})-(\d{2})$#', '\3.\2.\1', $meal['sonntag']); ?></p>
       </td>
-      <td><a href="/public/views/edit_meal.php?meal-id=<?php echo $meal['essen_id'] ?>"><?php echo '<img class="img-fluid" alt="Vorschaubild von ' . $meal['mahlzeit'] . '" src="' . $meal['bild'] . '" style="max-height:100px"></img>' ?></a></td>
+      <td><a href="/public/views/edit-meal.php?meal-id=<?php echo $meal['essen_id'] ?>&back=index.php"><?php echo '<img class="img-fluid" alt="Vorschaubild von ' . $meal['mahlzeit'] . '" src="' . $meal['bild'] . '" style="max-height:100px"></img>' ?></a></td>
       <td><p class="p-table"><?php echo $meal['notiz'] ?></p></td>
       <td>
         <p class="p-table"><?php echo $meal['mahlzeit']; ?></p>
-        <p class="edit-icon"><a href="/public/views/edit_sunday.php?day-id=<?php echo $meal['day_id']?>&year=<?php echo $get_year ?>"><span class="fa fa-pencil-square-o"></span></a></p>
+        <p class="edit-icon"><a href="/public/views/edit-sunday.php?day-id=<?php echo $meal['day_id']?>&year=<?php echo $get_year ?>&back=index.php"><span class="fa fa-pencil-square-o"></span></a></p>
       </td>
     </tr>
 

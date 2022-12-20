@@ -8,16 +8,16 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="/public/views/new_meal.php"><span class="fa fa-plus-square"></span>&nbspNeue&nbspMahlzeit</a>
+          <a class="nav-link" href="/public/views/new-meal.php"><span class="fa fa-plus-square"></span>&nbspNeue&nbspMahlzeit</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/public/views/all_meals.php"><span class="fa fa-fork-awesome"></span>&nbspAlle&nbspMahlzeiten</a>
+          <a class="nav-link" href="/public/views/all-meals.php"><span class="fa fa-fork-awesome"></span>&nbspAlle&nbspMahlzeiten</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><span class="fa fa-calendar"></span>&nbspJahresauswahl</a>
           <ul class="dropdown-menu">
-            <?php foreach($database_years as $year) : ?>
-              <li><a class="dropdown-item text-center" href="/public/views/full_year.php?year=<?php echo str_replace('sundays_', '', $year['table_name']) ?>"><?php echo str_replace('sundays_', '', $year['table_name']) ?></a></li>
+            <?php foreach($database_years as $link_year) : ?>
+              <li><a class="dropdown-item text-center" href="/public/views/full-year.php?year=<?php echo str_replace('sundays_', '', $link_year['table_name']) ?>"><?php echo str_replace('sundays_', '', $link_year['table_name']) ?></a></li>
               <?php endforeach ?>
             </ul>
           </li>

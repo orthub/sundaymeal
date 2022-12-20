@@ -9,6 +9,7 @@ require_once __DIR__ . '/../parts/menu.php';
 <div class="container">
 
   <?php require_once __DIR__ . '/../../app/helpers/flash_message.php'; ?>
+
   <div class="card">
 
     <div class="card-header">
@@ -18,8 +19,8 @@ require_once __DIR__ . '/../parts/menu.php';
     
     <div class="card-body">
       <div class="row">
-        <div class="col-md-6">
-          <img style="max-width:300px" src="<?php echo $sunday_and_meal['bild'] ?>" alt="Vorschaubild von <?php echo $sunday_and_meal['mahlzeit'] ?>"></img>
+        <div class="col-md-6 text-center">
+          <img class="img-width" src="<?php echo $sunday_and_meal['bild'] ?>" alt="Vorschaubild von <?php echo $sunday_and_meal['mahlzeit'] ?>"></img>
         </div>
         <div class="col-md-6">
           <div class="form-group">
@@ -33,6 +34,8 @@ require_once __DIR__ . '/../parts/menu.php';
               </select>
               <input type="hidden" name="table" value="<?php echo $table ?>" />
               <input type="hidden" name="day-id" value="<?php echo $sunday_and_meal['day_id'] ?>" />
+              <input type="hidden" name="back" value="<?php echo $back ?>" />
+              <input type="hidden" name="year" value="<?php echo $year ?>" />
               <br />
             </div>
           </div>
@@ -45,7 +48,11 @@ require_once __DIR__ . '/../parts/menu.php';
     </div>
 
           <div class="card-footer">
-            <a class="btn btn-danger" href="/public/views/index.php?year=<?php echo $current_year ?>&current-year=true">Abbrechen</a>
+            <?php if ($back == 'index.php') { ?>
+              <a class="btn btn-danger" href="/public/views/<?php echo $back ?>?year=<?php echo $year ?>&current-year=true">Abbrechen</a>
+            <?php } else { ?>
+              <a class="btn btn-danger" href="/public/views/<?php echo $back ?>?year=<?php echo $year ?>">Abbrechen</a>
+            <?php } ?>
           <div class="float-right">
             <button type="submit" class="btn btn-success">Speichern</button>
           </div>

@@ -68,12 +68,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($save_edited_meal) {
       $_SESSION['success']['meal-edit'] = 'Mahlzeit <b>' . $meal_name . '</b> wurde ge&aumlndert';
-      header('Location: ' . '/public/views/all_meals.php');
+      header('Location: ' . '/public/views/all-meals.php');
     }
 
   } else {
       $_SESSION['error']['meal-edit'] = 'Mahlzeit <b>' . $meal_name . '</b> konnte nicht ge&aumlndert werden';
-      header('Location: ' . '/public/views/edit_meal.php?meal-id=' . $meal_id);
+      header('Location: ' . '/public/views/edit-meal.php?meal-id=' . $meal_id);
     }
 
 }

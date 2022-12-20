@@ -56,5 +56,5 @@ if (!file_exists($file_path)) {
     $_SESSION['success']['pdf-saved'] = 'Jahresplan wurde gespeichert';
   }
  
-  header('Location: ' . '/public/views/db_edit.php');
+  header('Location: ' . '/public/views/db-edit.php');
 }

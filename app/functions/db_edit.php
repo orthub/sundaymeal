@@ -35,6 +35,8 @@ function delete_year_from_database(string $year): bool
 
   $res = get_db()->query($sql);
 
+  unset($year);
+
   if (!$res) {
     return false;
   }
@@ -49,6 +51,8 @@ function check_year(string $year)
           WHERE table_name LIKE '$year'";
   $res = get_db()->query($sql);
   $stmt = $res->fetchAll();
+
+  unset($year);
 
   if (empty($stmt)) {
     return false;
@@ -74,6 +78,10 @@ function get_all_sundays_from_year(string $start_date, string $end_date, string 
         $start_date += (7 * 24 * 3600); // add 7 days
     }
 
+    unset($start_date);
+    unset($end_date);
+    unset($week_number);
+
     return($sundays);
 }
 
@@ -87,6 +95,8 @@ function add_new_year(string $year)
           meal_id INTEGER REFERENCES meals (id) DEFAULT 1
   )";
   $res = get_db()->query($sql);
+
+  unset($year);
 
   if ($res) {
     return true;
@@ -109,6 +119,9 @@ function insert_sundays(string $year, string $table)
   $sql = "INSERT INTO $table (kw, sunday_date) VALUES $variable";
   $sql = substr($sql, 0, -1);
   $stmt = get_db()->query($sql);
+
+  unset($year);
+  unset($table);
 
   if (!$stmt) {
     return false;

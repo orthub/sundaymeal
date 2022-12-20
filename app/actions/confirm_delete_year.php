@@ -12,5 +12,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   } else {
     $_SESSION['error']['year-not-deleted'] = 'Jahr ' . $get_year . ' konnte nicht gelöscht werden';
   }
-  header('Location: ' . '/public/views/db_edit.php');
+  header('Location: ' . '/public/views/db-edit.php');
 }

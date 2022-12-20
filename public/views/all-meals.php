@@ -16,7 +16,7 @@ require_once __DIR__ . '/../parts/menu.php';
   <div class="row">
     <div class="col-md-4">
       <div class="img-width">
-        <td><img style="width:100%" src="<?php echo $meal['image_path'] ?>" alt="Vorschaubild von <?php echo $meal['meal'] ?>"></img></td>
+        <td><a href="/public/views/edit-meal.php?meal-id=<?php echo $meal['id'] ?>&back=all-meals.php"><img style="width:100%" src="<?php echo $meal['image_path'] ?>" alt="Vorschaubild von <?php echo $meal['meal'] ?>"></img></a></td>
       </div>
     </div>
     <div class="col-md-3">
@@ -30,7 +30,7 @@ require_once __DIR__ . '/../parts/menu.php';
     <div class="col-md-2">
       <br />
       <div class="text-center">
-        <a class="btn btn-success" href="/public/views/edit_meal.php?meal-id=<?php echo $meal['id'] ?>">Bearbeiten</a>
+        <a class="btn btn-success" href="/public/views/edit-meal.php?meal-id=<?php echo $meal['id'] ?>&back=all-meals.php">Bearbeiten</a>
       </div>
     </div>
     <div class="space"></div>

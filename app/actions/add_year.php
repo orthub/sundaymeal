@@ -19,13 +19,13 @@ if (!$year_exists) {
 
     if (!$insert_sundays) {
       $_SESSION['error']['insert-sundays'] = 'Sonntage konnten nicht eingefügt werden';
-      header('Location: ' . '/public/views/add_year.php');
+      header('Location: ' . '/public/views/add-year.php');
     } else {
       $_SESSION['success']['year-added'] = 'Neues Jahr hinzugef&uumlgt';
-      header('Location: ' . '/public/views/db_edit.php');
+      header('Location: ' . '/public/views/db-edit.php');
     }
   }
 } else {
   $_SESSION['error']['year-exist'] = 'Das Jahr <b>' . $year . '</b> existiert schon';
-  header('Location: ' . '/public/views/add_year.php');
+  header('Location: ' . '/public/views/add-year.php');
 }

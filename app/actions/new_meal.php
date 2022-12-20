@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       exit();
     }
   } else {
-    header('Location: ' . '/public/views/new_meal.php');
+    header('Location: ' . '/public/views/new-meal.php');
     exit();
   }
 }
