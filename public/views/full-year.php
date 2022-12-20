@@ -30,7 +30,7 @@ require_once __DIR__ . '/../parts/menu.php';
       <td><p><?php echo $meal['notiz'] ?></p></td>
       <td>
         <p class="p-table"><?php echo $meal['mahlzeit']; ?></p>
-        <p class="edit-icon"><a href="/public/views/edit-sunday.php?day-id=<?php echo $meal['day_id']?>&year=<?php echo $get_year ?>&back=full-year.php"><span class="fa fa-pencil-square-o"></span></a></p>
+        <p class="edit-icon"><a href="/public/views/edit-sunday.php?day-id=<?php echo $meal['day_id']?>&year=<?php echo $year ?>&back=full-year.php"><span class="fa fa-pencil-square-o"></span></a></p>
       </td>
     </tr>
 
