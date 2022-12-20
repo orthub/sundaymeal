@@ -20,8 +20,6 @@ require_once __DIR__ . '/../parts/menu.php';
       <div class="card-body">
         <div class="form-group">
 
-          <div class="space"></div>
-
           <div class="row">
             <label for="meal" class="form-label">Name:</label>
             <input type="text" class="form-control" id="meal" name="meal-name" value="<?php echo $meal['meal'] ?>" required>
@@ -35,13 +33,11 @@ require_once __DIR__ . '/../parts/menu.php';
           <textarea class="form-control" id="note" name="meal-note"><?php echo $meal['note'] ?></textarea>
         </div>
 
-        <div class="space"></div>
-
         <div class="row">
           <div class="col-sm">
             <div class="space"></div>
             <div class="form-group">
-              <label for="image">Neues Bild auswählen</label>
+              <label for="image">&nbspBild&nbspausw&aumlhlen&nbsp(4:3&nbsp900x675)</label>
               <br />
               <input lang="en" type="file" name="image" id="meal_image" value="Bild auswählen..." class="form-control-file" />
             </div>
@@ -49,7 +45,9 @@ require_once __DIR__ . '/../parts/menu.php';
           <div class="col-sm text-center">
             <div class="space"></div>
             <h4>Aktuelles Bild</h4>
-            <img src="<?php echo $meal['image_path'] ?>" alt="Vorschaubild von <?php echo $meal['meal'] ?>">
+            <div class="img-width-single">
+              <img class="img-fluid" src="<?php echo $meal['image_path'] ?>" alt="Vorschaubild von <?php echo $meal['meal'] ?>">
+            </div>
           </div>
         </div>
 
