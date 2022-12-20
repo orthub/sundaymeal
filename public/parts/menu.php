@@ -2,8 +2,8 @@
 <nav class="navbar navbar-custom navbar-expand-md">
   <div class="container">
     <a class="navbar-brand" href="/"><span class="fa fa-home"></span></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler tgl-btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="toggle-icon fa fa-bars"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
