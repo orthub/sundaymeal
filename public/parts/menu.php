@@ -22,7 +22,7 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/public/views/db_edit.php"><span class="fa fa-database"></span>&nbspDatenbank</a>
+            <a class="nav-link" href="/public/views/db-edit.php"><span class="fa fa-database"></span>&nbspDatenbank</a>
           </li>
         </ul>
     </div>
