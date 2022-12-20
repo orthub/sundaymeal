@@ -9,10 +9,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $image = '';
 
   $meal_id = filter_input(INPUT_POST, 'meal-id', FILTER_SANITIZE_SPECIAL_CHARS);
-  // $meal_image = filter_input(INPUT_POST, 'meal-image', FILTER_SANITIZE_SPECIAL_CHARS);
   $no_image_change = filter_input(INPUT_POST, 'no-image-change', FILTER_SANITIZE_SPECIAL_CHARS);
   $meal_name = filter_input(INPUT_POST, 'meal-name', FILTER_SANITIZE_SPECIAL_CHARS);
   $meal_note = filter_input(INPUT_POST, 'meal-note', FILTER_SANITIZE_SPECIAL_CHARS);
+  $back = filter_input(INPUT_POST, 'back', FILTER_SANITIZE_SPECIAL_CHARS);
 
   $target_dir = __DIR__ . '/../../public/images/';
   $target_file = $target_dir . basename($_FILES['image']['name']);
@@ -68,7 +68,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($save_edited_meal) {
       $_SESSION['success']['meal-edit'] = 'Mahlzeit <b>' . $meal_name . '</b> wurde ge&aumlndert';
-      header('Location: ' . '/public/views/all-meals.php');
+      if ($back == 'index.php') {
+        header('Location: ' . '/public/views/' . $back . '?year=' . date('Y') . '&current-year=true');
+      } else {
+        header('Location: ' . '/public/views/' . $back);
+      }
     }
 
   } else {

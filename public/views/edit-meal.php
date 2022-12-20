@@ -49,13 +49,18 @@ require_once __DIR__ . '/../parts/menu.php';
               <img class="img-fluid" src="<?php echo $meal['image_path'] ?>" alt="Vorschaubild von <?php echo $meal['meal'] ?>">
             </div>
           </div>
+          <input type="hidden" name="back" value="<?php echo $back ?>">
         </div>
 
         <div class="space"></div>
 
       </div>
       <div class="card-footer">
-        <a class="btn btn-danger" href="/public/views/index.php?year=<?php echo $current_year ?>&current-year=true">Abbrechen</a>
+        <?php if ($back == 'index.php') { ?>
+          <a class="btn btn-danger" href="/public/views/<?php echo $back ?>?year=<?php echo $current_year ?>&current-year=true">Abbrechen</a>
+        <?php } else { ?>
+          <a class="btn btn-danger" href="/public/views/<?php echo $back ?>?year=<?php echo $current_year ?>">Abbrechen</a>
+        <?php } ?>
         <div class="float-right">
           <button type="submit" class="btn btn-success">Speichern</button>
         </div>
